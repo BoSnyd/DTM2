@@ -30,4 +30,9 @@ for x in np.arange(0, 10.4, 5.3):
     col = FamilyInstance.ByPointAndLevel(famtype, pbc, level)
     col_list.append(col)
     print("Hello, world!")
+
+
+print("Is this a problem?")
+
+
 OUT = col_list
