@@ -1,0 +1,387 @@
+{
+  "Uuid": "fa1d9986-5a67-4f0d-a3b6-fd9427a130d5",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "Read_Python_file",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.Input.FileObject, CoreNodeModels",
+      "Id": "e5507cfe295548138c1781e115545dc7",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "56da2e2b17c048e2845c8345db6be009",
+          "Name": "path",
+          "Description": "Path to the file.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "aae63d2172454bf1a99724c318471358",
+          "Name": "file",
+          "Description": "File object",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Creates a file object from the given path"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.Filename, CoreNodeModels",
+      "Id": "a4f82e20020742ef8c621c14be1dc8ac",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "06975b04bf1c470290aecbbe463bc1a4",
+          "Name": "",
+          "Description": "File Path",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows you to select a file on the system and returns its file path",
+      "HintPath": "C:\\Users\\Bo\\Nextcloud\\MID\\MIDC\\Sem_01\\C3_Digital_Tools_II\\DTM2\\Test_File.py",
+      "InputValue": "C:\\Users\\Bo\\Nextcloud\\MID\\MIDC\\Sem_01\\C3_Digital_Tools_II\\DTM2\\Test_File.py"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "Id": "8eba162985e54eada48723c665369390",
+      "NodeType": "FunctionNode",
+      "Inputs": [
+        {
+          "Id": "0e352f60cb6343f7a0827400fe4b8cce",
+          "Name": "file",
+          "Description": "File object to read text from\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 1,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1c76b730569b4385b4f86fb70a2119ad",
+          "Name": "string",
+          "Description": "Contents of the text file.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "FunctionSignature": "DSCore.IO.FileSystem.ReadText@var",
+      "Replication": "Auto",
+      "Description": "Reads a text file and returns the contents as a string.\n\nFileSystem.ReadText (file: var): string"
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonStringNode, PythonNodeModels",
+      "Engine": "CPython3",
+      "VariableInputPorts": true,
+      "Id": "eea472188d86459abf08b4a879959000",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "fa3b0182a5754968b265c4ab00b4d65b",
+          "Name": "script",
+          "Description": "Python script to run.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a27663270591494abfc16d5e939af8b5",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "65a024d4266140418a2b2d5e32f7c30c",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a3e446c40b284643b6d7fb1a4b867ba1",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs a Python script from a string."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "WatchWidth": 200.0,
+      "WatchHeight": 200.0,
+      "Id": "988cccff5f2d421bb72b392586f7878d",
+      "NodeType": "ExtensionNode",
+      "Inputs": [
+        {
+          "Id": "e4fb8888bb5046548adcd83b5cdf58d9",
+          "Name": "",
+          "Description": "Node to show output from",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d608e003eef84c0f8b3dc924f1ca7b31",
+          "Name": "",
+          "Description": "Node output",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualizes a node's output"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.FamilyTypes, DSRevitNodesUI",
+      "SelectedIndex": 405,
+      "SelectedString": "M_Parking Space:4800 x 2400mm - 60 deg",
+      "Id": "07be208e2d8d4798af1c8460baae6ab0",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7afc647fd2074159997bd31b074c6d2d",
+          "Name": "Family Type",
+          "Description": "The selected Family Type",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All family types available in the document."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Levels, DSRevitNodesUI",
+      "SelectedIndex": 0,
+      "SelectedString": "L1",
+      "Id": "40c8a16388ea40298b06389974d23738",
+      "NodeType": "ExtensionNode",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ba7cb79d2902402290b6a7a96f2f91af",
+          "Name": "Levels",
+          "Description": "The selected Levels",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a level in the active document"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "aae63d2172454bf1a99724c318471358",
+      "End": "0e352f60cb6343f7a0827400fe4b8cce",
+      "Id": "871a19392ed44620a4faea6192f4ec50",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "06975b04bf1c470290aecbbe463bc1a4",
+      "End": "56da2e2b17c048e2845c8345db6be009",
+      "Id": "e729570c0bf64133982e54cd7d8fc34f",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "1c76b730569b4385b4f86fb70a2119ad",
+      "End": "fa3b0182a5754968b265c4ab00b4d65b",
+      "Id": "a5af5c4021094b06be79ac036fde1949",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "a3e446c40b284643b6d7fb1a4b867ba1",
+      "End": "e4fb8888bb5046548adcd83b5cdf58d9",
+      "Id": "44097219425140a28dedafb8b18fcb8a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "7afc647fd2074159997bd31b074c6d2d",
+      "End": "a27663270591494abfc16d5e939af8b5",
+      "Id": "3cef0f64696b4bbb8e1ab4273088424a",
+      "IsHidden": "False"
+    },
+    {
+      "Start": "ba7cb79d2902402290b6a7a96f2f91af",
+      "End": "65a024d4266140418a2b2d5e32f7c30c",
+      "Id": "dba7bc114e5745a18c3712df9c9bace2",
+      "IsHidden": "False"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Test_File.py",
+      "ReferenceType": "External",
+      "Nodes": [
+        "a4f82e20020742ef8c621c14be1dc8ac"
+      ]
+    }
+  ],
+  "EnableLegacyPolyCurveBehavior": true,
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "3.2",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "8.1",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "3.2.1.5366",
+      "RunType": "Automatic",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "_Background Preview",
+      "EyeX": -36.34709167480469,
+      "EyeY": 50.748504638671875,
+      "EyeZ": 113.4837417602539,
+      "LookX": 25.909015655517578,
+      "LookY": -28.068099975585938,
+      "LookZ": -125.22692108154297,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "ConnectorPins": [],
+    "NodeViews": [
+      {
+        "Id": "e5507cfe295548138c1781e115545dc7",
+        "Name": "File From Path",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 259.99999999999994,
+        "Y": 244.0
+      },
+      {
+        "Id": "a4f82e20020742ef8c621c14be1dc8ac",
+        "Name": "File Path",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": -148.0,
+        "Y": 245.60000000000002
+      },
+      {
+        "Id": "8eba162985e54eada48723c665369390",
+        "Name": "FileSystem.ReadText",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 455.19999999999993,
+        "Y": 243.2
+      },
+      {
+        "Id": "eea472188d86459abf08b4a879959000",
+        "Name": "Python Script From String",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 749.4240210883003,
+        "Y": 283.61233104547017
+      },
+      {
+        "Id": "988cccff5f2d421bb72b392586f7878d",
+        "Name": "Watch",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 1052.4811430235864,
+        "Y": 285.5832961092915
+      },
+      {
+        "Id": "07be208e2d8d4798af1c8460baae6ab0",
+        "Name": "Family Types",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 156.03811006694673,
+        "Y": 388.0384421043738
+      },
+      {
+        "Id": "40c8a16388ea40298b06389974d23738",
+        "Name": "Levels",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "ShowGeometry": true,
+        "X": 379.42116102280943,
+        "Y": 542.5792505316276
+      }
+    ],
+    "Annotations": [],
+    "X": 2.3396794628690714,
+    "Y": 40.55420730591152,
+    "Zoom": 0.44338367202533824
+  }
+}
