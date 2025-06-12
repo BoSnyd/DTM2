@@ -29,5 +29,5 @@ for x in np.arange(0, 10.4, 5.3):
     pbc = Point.ByCoordinates(x,0,0)
     col = FamilyInstance.ByPointAndLevel(famtype, pbc, level)
     col_list.append(col)
-
+    print("Hello, world!")
 OUT = col_list
